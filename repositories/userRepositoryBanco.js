@@ -1,0 +1,23 @@
+const User = require('../models/user');
+const UserRepository = require('./userRepository');
+
+class UserRepositoryBanco extends UserRepository{
+    async getAll(){
+        return await User.find();
+    }
+    
+    async create(user){
+        return await User.create(user);
+    }
+
+    async update(id, uder){
+        return await User.findByIdAndUpdate(id, user, {new: true});
+    }
+
+    async delete(id){
+        return await User.findByIdAndDelete(id);
+    }
+
+}
+
+module.exports = UserRepositoryBanco;
