@@ -10,7 +10,7 @@ class UserRepositoryBanco extends UserRepository{
         return await User.create(user);
     }
 
-    async update(id, uder){
+    async update(id, user){
         return await User.findByIdAndUpdate(id, user, {new: true});
     }
 

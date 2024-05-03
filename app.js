@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 3333;
 
 async function main(){
   await mongoose.connect('mongodb://localhost:27017/lab_dev', {
