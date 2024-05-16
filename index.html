@@ -21,6 +21,27 @@
                 });
             })
             .catch(error => console.error('Erro ao buscar usuários:', error));
+
+
     </script>
+     <h1>Livro</h1>
+     <ul id="bookList"></ul>
+
+     <script>
+        fetch('/api/book')
+            .then(response => response.json())
+            .then(books => {
+                const bookList = document.getElementById('bookList');
+                books.forEach(book => {
+                    const li = document.createElement('li');
+                    li.textContent = `${book.titulo} (${book.autor})`;
+                    bookList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Erro ao buscar livros:', error));
+
+
+    </script>
+ 
 </body>
 </html>
