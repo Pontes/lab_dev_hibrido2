@@ -15,7 +15,7 @@ exports.getAllusers = async(request, response)=>{
 exports.createUser = async(request, response)=>{
     try{
         const user =await userRepository.create(request.body);
-        response.status(200).json(users);
+        response.status(200).json(user);
     }catch(error){
         response.status(400).json({
             message: error.message
